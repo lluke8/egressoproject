@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @ending.ano %>
+</p>
+
+<p>
+  <strong>Semestre:</strong>
+  <%= @ending.semestre %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @ending.student %>
+</p>
+
+<%= link_to 'Edit', edit_ending_path(@ending) %> |
+<%= link_to 'Back', endings_path %>

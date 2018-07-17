@@ -1,0 +1,32 @@
+<%= form_with(model: ending, local: true) do |form| %>
+  <% if ending.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ending.errors.count, "error") %> prohibited this ending from being saved:</h2>
+
+      <ul>
+      <% ending.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ano %>
+    <%= form.number_field :ano, id: :ending_ano %>
+  </div>
+
+  <div class="field">
+    <%= form.label :semestre %>
+    <%= form.number_field :semestre, id: :ending_semestre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.text_field :student_id, id: :ending_student_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
