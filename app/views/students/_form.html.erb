@@ -41,6 +41,12 @@
     
     <%= collection_select(:student, :course_id, Course.all, :id, :nome) %>
   </div>
+  <%= form.fields_for :testimony do |testimony_fields| %>
+    <div class="field">
+      <%= testimony_fields.label :depoimento %>
+      <%= testimony_fields.text_field :depoimento, id: :testimony_depoimento %>
+    </div>
+  <% end %>
 
   <div id = "contacts">
     <%= form.fields_for :contacts do |contacts_fields| %>
@@ -54,3 +60,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+

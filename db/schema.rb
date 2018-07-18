@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717224128) do
+ActiveRecord::Schema.define(version: 20180718225617) do
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "tipo"
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 20180717224128) do
     t.index ["course_id"], name: "index_students_on_course_id"
   end
 
+  create_table "testimonies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "depoimento"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_testimonies_on_student_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -85,4 +93,5 @@ ActiveRecord::Schema.define(version: 20180717224128) do
   add_foreign_key "coordinators", "courses"
   add_foreign_key "endings", "students"
   add_foreign_key "students", "courses"
+  add_foreign_key "testimonies", "students"
 end

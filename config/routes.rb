@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :testimonies
   devise_for :users
   resources :contacts
   resources :endings

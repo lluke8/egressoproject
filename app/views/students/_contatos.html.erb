@@ -1,0 +1,18 @@
+<h2>Contatos</h2>
+
+<table class="table">
+   <thead>
+     <tr>
+       <td>Tipo</td>
+       <td>Valor</td>
+     </tr>
+   </thead>
+   <tbody>
+      <% for contato in @student.contacts %>
+          <tr>
+            <td><%= contato.tipo %></td>
+            <td><%= contato.valor %></td>
+          </tr>
+      <% end %>     
+   </tbody>
+</table>
