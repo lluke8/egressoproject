@@ -36,6 +36,27 @@
     <%= form.text_field :email, id: :course_email %>
   </div>
 
+  <h3>Coordenador</h3>
+
+  <%= form.fields_for :coordinator do |coordinator_fields| %>
+
+    <div class="field">
+      <%= coordinator_fields.label :nome %>
+      <%= coordinator_fields.text_field :nome, id: :coordinator_nome %>
+    </div>
+
+    <div class="field">
+      <%= coordinator_fields.label :matricula %>
+      <%= coordinator_fields.text_field :matricula, id: :coordinator_matricula %>
+    </div>
+
+    <div class="field">
+      <%= coordinator_fields.label :senha %>
+      <%= coordinator_fields.text_field :senha, id: :coordinator_senha %>
+    </div>
+
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

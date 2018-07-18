@@ -30,5 +30,22 @@
   <%= @student.course.nome %>
 </p>
 
+<h2>Contatos</h2>
+<table class="table">
+   <thead>
+     <tr>
+       <td>Tipo</td>
+       <td>Valor</td>
+     </tr>
+   </thead>
+   <tbody>
+      <% for contato in @student.contacts %>
+          <tr>
+            <td><%= contato.tipo %></td>
+            <td><%= contato.valor %></td>
+          </tr>
+      <% end %>     
+   </tbody>
+</table>
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

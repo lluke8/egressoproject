@@ -15,6 +15,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    @course.build_coordinator
   end
 
   # GET /courses/1/edit
@@ -68,7 +69,13 @@ class CoursesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    def course_params_new
+      params.require(:course).permit(:nome, :abreviacao, :site, :modalidade, :email,
+              coordinator_attributes: [:nome, :matricula, :senha])
+    end
+
     def course_params
-      params.require(:course).permit(:nome, :abreviacao, :site, :modalidade, :email)
+      params.require(:course).permit(:nome, :abreviacao, :site, :modalidade, :email, 
+                            coordinator_attributes: [:nome, :matricula, :senha, :id])
     end
 end

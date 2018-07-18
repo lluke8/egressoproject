@@ -26,6 +26,9 @@ gem 'bootstrap'
 gem 'jquery-rails'
 #cocoon
 gem 'cocoon'
+#devise
+gem 'devise'
+gem 'devise-i18n'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
