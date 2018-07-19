@@ -7,7 +7,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.boolean :perfil_publico
       t.boolean :homologado
       t.references :course, foreign_key: true
-
+  
       t.timestamps
     end
   end

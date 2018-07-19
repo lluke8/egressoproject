@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
-    @student.build_testimony
+    @student.build_testimony                        
   end
 
   # GET /students/1/edit
